@@ -1,13 +1,15 @@
 version: '3'
 services:
   flexbot:
+    env_file:
+      - .env
     image: huconn/flexbot:latest
     environment:
       - SLACK_TOKEN="SLACK_TOKEN"
       - SIGNING_SECRET="SIGNING_SECRET"
       - TEAMS_WEBHOOK_URL=TEAMS_WEBHOOK_URL
       - SLACK_CHANNEL=SLACK_CHANNEL
-      - FLEXBOT_PORT=5050
+      - FLEXBOT_PORT=5080
       - FLEXBOT_HOST=localhost
 
 
