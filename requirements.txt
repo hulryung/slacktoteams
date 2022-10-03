@@ -1,0 +1,6 @@
+emoji_data_python==1.5.0
+Flask==2.2.2
+pymsteams==0.2.1
+python-dotenv==0.21.0
+slackclient==2.9.4
+slackeventsapi==3.0.1
