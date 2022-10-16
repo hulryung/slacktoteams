@@ -19,6 +19,7 @@ env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 port = int(os.environ.get('FLEXBOT_PORT', 5080))
+hostname = os.environ.get('HOSTNAME', '0.0.0.0')
 app = Flask(__name__)
 slack_event_adapter = SlackEventAdapter(os.environ['SIGNING_SECRET'], '/slack/events', app)
 client = slack.web.client.WebClient(token=os.environ['SLACK_TOKEN'])
@@ -48,4 +49,4 @@ def message(payload):
             print(text)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host=hostname, port=port)
