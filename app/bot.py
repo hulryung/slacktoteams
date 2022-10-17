@@ -30,6 +30,7 @@ def say_hello(message, say):
 @app.message("휴가")
 def say_vacation(message, say):
     text = convert_emoji(message['text'])
+    teamsMessage.title("휴가")
     teamsMessage.text(text)
     teamsMessage.send()
     print(message)
